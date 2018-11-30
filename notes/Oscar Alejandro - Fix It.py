@@ -5,7 +5,7 @@ height = input()
 print("How much do you weigh?", end=' ')
 weight = input()
 
-print("So, you're %s old, %s tall and %s heavy.") % (age, height, weight)
+print("So, you're %s old, %s tall and %s heavy." % (age, height, weight))
 
 
 print('Let\'s practice everything.')
