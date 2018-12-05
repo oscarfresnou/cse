@@ -7,25 +7,34 @@ challenge1("Oscar", "Alejandro")
 '''
 '''
 def challenge2(numbers):
-    number = int(input("Enter a number: "))
-    mod = number %2
-    if mod > 0:
-        print("This is an odd number")
-    else:
+    if numbers % 2 == 0:
         print("This is a even number")
+    else:
+        print("This is a odd number")
 
-challenge2(input)
+
+challenge2(57)
 '''
+
 '''
 def challenge3(base, height):
-    b = int(input("Input the base: "))
-    h = int(input("Input the height : "))
-
-    area = b * h / 2
-
+    area = base * height / 2
     print("area = %d" % area)
 
 
 challenge3(input, input)
 '''
-def challenge4():
+
+
+def challenge4(number):
+
+    number = int(input("Type a negative or a positive number"))
+    if number < 0:
+        print("This is a negative number")
+    if number > 0:
+        print("This is a positive")
+    if number == 0:
+        print("This is zero")
+
+
+challenge4(50)
