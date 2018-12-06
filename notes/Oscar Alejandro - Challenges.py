@@ -5,6 +5,7 @@ def challenge1 (first_name, last_name):
 
 challenge1("Oscar", "Alejandro")
 '''
+
 '''
 def challenge2(numbers):
     if numbers % 2 == 0:
@@ -22,10 +23,10 @@ def challenge3(base, height):
     print("area = %d" % area)
 
 
-challenge3(input, input)
+challenge3(4, 6)
 '''
 
-
+'''
 def challenge4(number):
 
     number = int(input("Type a negative or a positive number"))
@@ -38,3 +39,13 @@ def challenge4(number):
 
 
 challenge4(50)
+'''
+
+
+def challenge5(radius):
+    from math import pi
+    r = float(input("Input the radius of the circle : "))
+    print("The area of the circle with radius " + str(r) + " is: " + str(pi * r ** 2))
+
+challenge5(50)
+
