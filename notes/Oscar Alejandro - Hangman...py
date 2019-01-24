@@ -2,7 +2,6 @@ import random
 import sys
 
 
-# lets set some variables
 wordList = [
     "lion", "umbrella", "window", "computer", "glass", "juice", "chair", "desktop",
     "laptop", "dog", "cat", "lemon", "cabel", "mirror", "hat"
@@ -12,7 +11,7 @@ guess_word = []
 secretWord = random.choice(wordList)
 length_word = len(secretWord)
 alphabet = "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U",\
-           "V", "W", "X", "Y", "Z"
+           "V", "W", "X", "Y", "Z", ""
 letter_storage = []
 
 
@@ -31,27 +30,27 @@ def beginning():
 beginning()
 
 
-def newFunc():
+def new_func():
     print("Well, that's perfect moment to play some Hangman!\n")
 
     while True:
-        gameChoice = input("Would You?\n").upper()
+        game_choice = input("Would You?\n").upper()
 
-        if gameChoice == "YES" or gameChoice == "Y":
+        if game_choice == "YES" or game_choice == "Y":
             break
-        elif gameChoice == "NO" or gameChoice == "N":
+        elif game_choice == "NO" or game_choice == "N":
             sys.exit("That's a shame! Have a nice day")
         else:
             print("Please Answer only Yes or No")
             continue
 
-newFunc()
 
+new_func()
 
 
 def change():
 
-    for character in secretWord: # printing blanks for each letter in secret word
+    for character in secretWord:
         guess_word.append("-")
 
     print("Ok, so the word You need to guess has", length_word, "characters")
@@ -61,18 +60,16 @@ def change():
     print(guess_word)
 
 
-
 def guessing():
     guess_taken = 1
 
     while guess_taken < 10:
 
-
         guess = input("Pick a letter\n").lower()
 
-        if not guess in alphabet: #checking input
+        if not guess in alphabet:
             print("Enter a letter from a-z alphabet")
-        elif guess in letter_storage: #checking if letter has been already used
+        elif guess in letter_storage:
             print("You have already guessed that letter!")
         else:
 
@@ -91,7 +88,7 @@ def guessing():
                 print("The letter is not in the word. Try Again!")
                 guess_taken += 1
                 if guess_taken == 10:
-                    print(" Sorry Mate, You lost :<! The secret word was",         secretWord)
+                    print(" Sorry Mate, You lost :<! The secret word was %s",   secretWord)
 
 
 change()
