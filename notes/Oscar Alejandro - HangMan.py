@@ -16,6 +16,6 @@ while guesses > 0:
         else:
             output.append("_")
     print("".join(output))
-    break
 
-    # Take an guess from a player and modify the letters guessed
+    guess = input("Guess a letter: ").lower()
+  # guessed_letter.append(guess)

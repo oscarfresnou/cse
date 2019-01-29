@@ -11,7 +11,8 @@ guess_word = []
 secretWord = random.choice(wordList)
 length_word = len(secretWord)
 alphabet = "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U",\
-           "V", "W", "X", "Y", "Z", ""
+           "V", "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p",\
+           "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",
 letter_storage = []
 
 
@@ -50,7 +51,7 @@ new_func()
 
 def change():
 
-    for character in secretWord:
+    for not letter in secretWord:
         guess_word.append("-")
 
     print("Ok, so the word You need to guess has", length_word, "characters")
