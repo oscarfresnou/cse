@@ -42,8 +42,8 @@ nested_dictionary = {
         "POPULATION": 398648290,
         "CITIES": [
             "Fresno"
-            "San Fransico"
-            "Los Angles"
+            " San Fransico"
+            " Los Angles"
         ]
     },
     "VA": {
@@ -76,4 +76,22 @@ nested_dictionary = {
     }
 
 }
-print(nested_dictionary["MD"]["CITIES"])
+print(nested_dictionary["MD"]["CITIES"][0])
+print(nested_dictionary["VA"]["NAME"])
+
+print(nested_dictionary.keys())
+print(nested_dictionary.items())
+
+print()
+for key, value in nested_dictionary.items():
+    print(key)
+    print(value)
+    print("-" * 20)
+
+# We're going to make this look great...
+for states, facts in nested_dictionary.items():
+    for attr, value in facts.items():
+        print(attr)
+        print(value)
+        print("-" * 20)
+    print("=" * 20)

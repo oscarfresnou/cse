@@ -4,7 +4,7 @@ import sys
 
 wordList = [
     "lion", "umbrella", "window", "computer", "glass", "juice", "chair", "desktop",
-    "laptop", "dog", "cat", "lemon", "cabel", "mirror", "hat"
+    "laptop", "dog", "cat", "lemon", "cable", "mirror", "hat"
            ]
 
 guess_word = []
