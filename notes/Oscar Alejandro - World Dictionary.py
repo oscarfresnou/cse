@@ -16,7 +16,7 @@ world_map = {
 }
 
 # Other variables
-current_node = ['R19A']
+current_node = (world_map['R19A'])
 directions = ["NORTH", "SOUTH", "EAST", "WEST", "UP", "DOWN"]
 playing = True
 
