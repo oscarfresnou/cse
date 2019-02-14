@@ -34,7 +34,7 @@
     <session id="-1644486022">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="50" />
+          <entry key="project.closed" value="51" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.101" value="1" />
           <entry key="project.open.time.11" value="2" />
@@ -67,30 +67,31 @@
           <entry key="project.open.time.72" value="1" />
           <entry key="project.open.time.76" value="1" />
           <entry key="project.open.time.78" value="1" />
+          <entry key="project.open.time.79" value="1" />
           <entry key="project.open.time.80" value="1" />
           <entry key="project.open.time.9" value="2" />
           <entry key="project.open.time.94" value="1" />
-          <entry key="project.opened" value="58" />
+          <entry key="project.opened" value="59" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="35" />
+          <entry key="py" value="36" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="35" />
+          <entry key="Python" value="36" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="14950" />
+          <entry key="py" value="15135" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="14950" />
+          <entry key="Python" value="15135" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
@@ -102,7 +103,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Oscar Alejandro - Dictionary.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="355">
+            <state relative-caret-position="443">
               <caret line="96" column="19" selection-start-line="96" selection-start-column="19" selection-end-line="96" selection-end-column="19" />
             </state>
           </provider>
@@ -112,16 +113,28 @@
         <entry file="file://$PROJECT_DIR$/Oscar Alejandro - World Dictionary.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="285">
-              <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
+              <caret line="62" selection-start-line="62" selection-end-line="62" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Oscar Alejandro - object notes.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="32" column="117" lean-forward="true" selection-start-line="32" selection-start-column="117" selection-end-line="32" selection-end-column="117" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Oscar Alejandro - object notes.py">
+        <entry file="file://$PROJECT_DIR$/Oscar Alejandro - Object.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="355">
-              <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
+            <state relative-caret-position="340">
+              <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
+              <folding>
+                <marker date="1550162421086" expanded="true" signature="746:759" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -189,6 +202,7 @@
         <option value="$PROJECT_DIR$/Oscar Alejandro - World Dictionary.py" />
         <option value="$PROJECT_DIR$/Special_Random.py" />
         <option value="$PROJECT_DIR$/Oscar Alejandro - object notes.py" />
+        <option value="$PROJECT_DIR$/Oscar Alejandro - Object.py" />
       </list>
     </option>
   </component>
@@ -209,20 +223,7 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="notes" type="b2602c69:ProjectViewProjectNode" />
-              <item name="notes" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -413,7 +414,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49392098" visible="true" weight="0.28360656" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49392098" weight="0.28360656" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -498,13 +499,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Oscar Alejandro - Hangman...py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="53" column="19" selection-start-line="53" selection-start-column="19" selection-end-line="53" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Oscar Alejandro - Hangman...py" />
     <entry file="file://$PROJECT_DIR$/Oscar Alejandro - HangMan.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -526,20 +521,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Oscar Alejandro - Dictionary.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="96" column="19" selection-start-line="96" selection-start-column="19" selection-end-line="96" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Oscar Alejandro - World Dictionary.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Special_Random.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -550,10 +531,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Oscar Alejandro - Dictionary.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="443">
+          <caret line="96" column="19" selection-start-line="96" selection-start-column="19" selection-end-line="96" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Oscar Alejandro - World Dictionary.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="62" selection-start-line="62" selection-end-line="62" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Oscar Alejandro - object notes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
+        <state relative-caret-position="375">
+          <caret line="32" column="117" lean-forward="true" selection-start-line="32" selection-start-column="117" selection-end-line="32" selection-end-column="117" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Oscar Alejandro - Object.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
+          <folding>
+            <marker date="1550162421086" expanded="true" signature="746:759" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
