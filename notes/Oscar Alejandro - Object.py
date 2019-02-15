@@ -1,27 +1,22 @@
-class LoveGun(object):
-    def __init__(self, capacity, distance, stock):
+class Stapler(object):
+    def __init__(self, capacity, stock):
         self.capacity = capacity
-        self.range = distance
-        self.trigger = True
+        self.press_down = True
         self.stock = stock
-        self.bullets_that_spread = 5
+        self.staples = 5
 
-    def shoot(self, ammo):
-        if self.trigger:
-            if self.bullets_that_spread <= 0:
-                print("There's no pressure")
-            elif self.bullets_that_spread< ammo:
-                print("You run out of pressure after firing for %s seconds", self.bullets_that_spread)
-                self.bullets_that_spread = 0
+    def shoot(self, ):
+        if self.press_down:
+            if self.staples <= 0:
+                print("There's no staples")
+            elif self.staples < :
+                print("You run out of staples after using #s staples", self.staples)
+                self.staples = 0
             else:
-                print("You shoot for %s seconds"
-                      % ammo)
-                self.bullets_that_spread -= ammo
+                print("You used the stapler for #s staples" % )
+                self.staples -=
 
-        def load_it_up(self):
+        def refill(self):
             self.duration_of_pressure = 5
-            print("You pump the tank up to full pressure")
+            print("You fill the stapler")
 
-
-my_love_gun = LoveGun(99999999999999999999999999999999999
-                        , 999999999999999999999999999999999999999999999999999999999999999999999999999999999999, True)
