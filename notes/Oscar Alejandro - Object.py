@@ -5,18 +5,18 @@ class Stapler(object):
         self.stock = stock
         self.staples = 5
 
-    def shoot(self, ):
+    def shoot(self, staples_left):
         if self.press_down:
             if self.staples <= 0:
                 print("There's no staples")
-            elif self.staples < :
+            elif self.staples < staples_left:
                 print("You run out of staples after using #s staples", self.staples)
                 self.staples = 0
             else:
-                print("You used the stapler for #s staples" % )
-                self.staples -=
+                print("You used the stapler for #s staples" % staples_left)
+                self.staples -= staples_left
 
-        def refill(self):
-            self.duration_of_pressure = 5
-            print("You fill the stapler")
+        def refill():
+            self.duration_of_staples = 5
+            print("You filled the stapler")
 
