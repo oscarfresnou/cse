@@ -16,7 +16,7 @@ class Stapler(object):
                 print("You used the stapler for #s staples" % staples_left)
                 self.staples -= staples_left
 
-        def refill():
+        def refill(self):
             self.duration_of_staples = 5
             print("You filled the stapler")
 
