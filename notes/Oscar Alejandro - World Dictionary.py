@@ -39,10 +39,18 @@ world_map = {
         'PATHS': {
             'SOUTH': 'MIDDLE_OF_THE_ROAD',
             'NORTH': 'TORN_UP_ROOM',
+        }
+    },
+    'TORN_UP_ROOM': {
+        'NAME': "Torn up room",
+        'DESCRIPTION': "The room is burned, torn up, and abandoned.",
+        'PATHS': {
+            'SOUTH': 'ABANDONED_HOUSE',
             'WEST': 'DESTROYED_KITCHEN',
             'EAST': 'OLD_BATHROOM'
         }
     },
+
     'ABANDONED_STORE': {
         'NAME': "Abandoned store",
         'DESCRIPTION': "It is old and broken down. Few parts of the store are breaking and look unstable.",
@@ -60,7 +68,6 @@ world_map = {
             'WEST': "MIDDLE_OF_THE_ROAD"
         }
     },
-
 }
 
 # Other variables

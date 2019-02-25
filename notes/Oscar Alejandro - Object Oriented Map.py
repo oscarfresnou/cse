@@ -20,9 +20,12 @@ Parking_lot_gate = ("The Front Gate", 'PARKING_LOT', 'MIDDLE_OF_THE_ROAD', None,
 Middle_of_the_road = ("Road", 'PARKING_LOT_GATE', 'ABANDONED_HOUSE', 'ABANDONED_STORE', 'BARRICADE_OF_CARS',
                       "There are puddles of green water and abandoned cars")
 
-Abandoned_House = ("Old House", 'MIDDLE_OF_THE_ROAD', 'TORN_UP_ROOM', 'DESTROYED_KITCHEN', 'OLD_BATHROOM',
+Abandoned_House = ("Old House", 'MIDDLE_OF_THE_ROAD', 'TORN_UP_ROOM', None, None,
                    "The house looks like it hasn't been kept in for years",
                    "There are a few burn marks but a lot of trash.")
+
+Torn_up_room = ("Torn up room", 'ABANDONED_HOUSE', 'DESTROYED_KITCHEN', 'OLD_BATHROOM',
+                "The room is burned, torn up, and abandoned.")
 
 Abandoned_Store = ("Abandoned store", 'MIDDLE_OF_THE_ROAD', 'DAIRY_AISLE', 'CANNED_FOOD', 'FRUITS_AND_VEGETABLES',
                    "It is old and broken down. Few parts of the store are breaking and look unstable.")
