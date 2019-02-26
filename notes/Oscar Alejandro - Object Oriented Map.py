@@ -8,9 +8,26 @@ class Room(object):
         self.description = description
 
 
+class Player(object):
+    def __init__(self, starting_location):
+        self.health = 100
+        self.current_location = starting_location
+        self.inventory = []
+
+    def move(self, new_location):
+        '''This method moves a character to a new location
+
+        :param new_location: The variable containing a room object
+        :return:
+        '''
+        self.current_location = new_location
+
+
 # Option 2
 # Put Them Away
 R19A = Room("Mr. Wiebe's room", 'PARKING_LOT', None, None, None, "This is the room that you are in.")
+
+player = Player(R19A)
 
 Parking_lot = ("A Parking Lot", 'R19A', 'PARKING_LOT_GATE', None, None, "There are a few cars parked here.")
 
@@ -32,3 +49,21 @@ Abandoned_Store = ("Abandoned store", 'MIDDLE_OF_THE_ROAD', 'DAIRY_AISLE', 'CANN
 
 Barricade_of_Cars = ("Barricade of Cars", "MIDDLE_OF_THE_ROAD",
                      "All of these cars seemed lock. Only if i had a metal pipe to break in.")
+
+
+playing = True
+
+while playing:
+    print(player.current_location.name)
+    print(player.current_location.description)
+    command = input(">_")
+    if command.lower() in ('q', 'quit', 'exit'):
+        playing = False
+    elif command.upper() in directions:
+        try:
+            room_name = current_node['PATHS'][command.upper()]
+            current_node = world_map[room_name]
+        except KeyError:
+            print("I can't go that way")
+    else:
+        print("command not recognized")
