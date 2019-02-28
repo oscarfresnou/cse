@@ -25,45 +25,49 @@ class Player(object):
 
 # Option 2
 # Put Them Away
-R19A = Room("Mr. Wiebe's room", 'PARKING_LOT', None, None, None, "This is the room that you are in.")
+R19A = Room("Mr. Wiebe's room", 'Parking_lot', None, None, None, "This is the room that you are in.")
 
 player = Player(R19A)
 
-Parking_lot = ("A Parking Lot", 'R19A', 'PARKING_LOT_GATE', None, None, "There are a few cars parked here.")
+Parking_lot = Room("A Parking Lot", 'R19A', 'PARKING_LOT_GATE', None, None, "There are a few cars parked here.")
 
-Parking_lot_gate = ("The Front Gate", 'PARKING_LOT', 'MIDDLE_OF_THE_ROAD', None, None,
+Parking_lot_gate = Room("The Front Gate", 'PARKING_LOT', 'MIDDLE_OF_THE_ROAD', None, None,
                     "The Gates are rusting, but the doors aren't locked.")
 
-Middle_of_the_road = ("Road", 'PARKING_LOT_GATE', 'ABANDONED_HOUSE', 'ABANDONED_STORE', 'BARRICADE_OF_CARS',
+Middle_of_the_road = Room("Road", 'PARKING_LOT_GATE', 'ABANDONED_HOUSE', 'ABANDONED_STORE', 'BARRICADE_OF_CARS',
                       "There are puddles of green water and abandoned cars")
 
-Abandoned_House = ("Old House", 'MIDDLE_OF_THE_ROAD', 'TORN_UP_ROOM', None, None,
+Abandoned_House = Room("Old House", 'MIDDLE_OF_THE_ROAD', 'TORN_UP_ROOM', None, None,
                    "The house looks like it hasn't been kept in for years",
                    "There are a few burn marks but a lot of trash.")
 
-Torn_up_room = ("Torn up room", 'ABANDONED_HOUSE', 'DESTROYED_KITCHEN', 'OLD_BATHROOM',
+Torn_up_room = Room("Torn up room", 'ABANDONED_HOUSE', 'DESTROYED_KITCHEN', 'OLD_BATHROOM',
                 "The room is burned, torn up, and abandoned.")
 
-Abandoned_Store = ("Abandoned store", 'MIDDLE_OF_THE_ROAD', 'DAIRY_AISLE', 'CANNED_FOOD', 'FRUITS_AND_VEGETABLES',
+Abandoned_Store = Room("Abandoned store", 'MIDDLE_OF_THE_ROAD', 'DAIRY_AISLE', 'CANNED_FOOD', 'FRUITS_AND_VEGETABLES',
                    "It is old and broken down. Few parts of the store are breaking and look unstable.")
 
-Barricade_of_Cars = ("Barricade of Cars", "MIDDLE_OF_THE_ROAD",
+Barricade_of_Cars = Room("Barricade of Cars", "MIDDLE_OF_THE_ROAD",
                      "All of these cars seemed lock. Only if i had a metal pipe to break in.")
 
 
 playing = True
+directions = ['north', 'south', 'east', 'west', 'up', 'down']
 
+# Controller
 while playing:
     print(player.current_location.name)
     print(player.current_location.description)
     command = input(">_")
-    if command.lower() in ('q', 'quit', 'exit'):
+    if command.lower() in ['q', 'quit', 'exit']:
         playing = False
-    elif command.upper() in directions:
+    elif command.lower() in directions:
         try:
-            room_name = current_node['PATHS'][command.upper()]
-            current_node = world_map[room_name]
+            room_name = getattr(player.current_location, command)
+            room_object = globals()[room_name]
+
+            player.move(room_object)
         except KeyError:
-            print("I can't go that way")
+            print("I can't go that way.")
     else:
-        print("command not recognized")
+        print("Command Not Recognized")
