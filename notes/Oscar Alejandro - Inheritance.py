@@ -18,7 +18,7 @@ class Car(Vehicle):
 
     def move_forward(self):
         self.fuel -= 1
-        print("You turn forward")
+        print("You go forward")
 
     def turn_left(self):
         self.fuel -= 1
@@ -32,6 +32,10 @@ class Car(Vehicle):
 class Corvette(Car):
     def __init__(self):
         super(Corvette, self).__init__("Corvette", "Gas", "Slim")
+
+    def start_engine(self):
+        self.engine_status = True
+        print("You push the button and the car starts")
 
 
 Julianna_Car = Corvette()
