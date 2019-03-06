@@ -4,6 +4,7 @@ class Stapler(object):
         self.press_down = True
         self.stock = stock
         self.staples = 5
+        self.refill = True
 
     def shoot(self, staples_left):
         if self.press_down:
