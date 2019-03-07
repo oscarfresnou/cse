@@ -11,24 +11,23 @@ class Laptop(object):
         self.computer_uses = False
 
     def laptop_used(self):
-         if self.computer_uses:
-             if self.battery <=0:
+        if self.computer_uses:
+            if self.battery <= 0:
                 print("Computer is shutting down...")
-             elif self.battery < 100
-                print("You run out of battery after %s uses" % computer_uses)
-
+            elif self.battery < 100:
+                print("You run out of battery after multiple uses")
 
 
 class Stapler(object):
-    def __init__(self, capacity, stock):
+    def __init__(self, capacity, duration_of_staples):
             self.capacity = capacity
             self.press_down = True
-            self.stock = stock
+            self.stock = duration_of_staples
             self.staples = 5
             self.refill = True
 
     def shoot(self, staples_left):
-                   if self.press_down:
+                    if self.press_down:
                         if self.staples <= 0:
                             print("There's no staples")
                         elif self.staples < staples_left:
@@ -39,5 +38,11 @@ class Stapler(object):
                             self.staples -= staples_left
 
     def refill(self):
-            self.duration_of_staples = 5
+            self.refill = 5
             print("You filled the stapler")
+
+
+class Sword(object):
+    def __init__(self):
+        self.damage = 75
+        self.hit = 30
