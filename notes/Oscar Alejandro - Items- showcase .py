@@ -1,11 +1,18 @@
-class Room(object):
-    def __init__(self, name, north=None, south=None, east=None, west=None, description=''):
+class Item(object):
+    def __init__(self, name):
         self.name = name
-        self.north = north
-        self.south = south
-        self.east = east
-        self.west = west
-        self.description = description
+
+
+class Vehicle(Item):
+    def __init__(self, name):
+        super(Vehicle, self).__init__(name)
+        self.engine = True
+        self.steering_wheel = True
+
+
+class Boat(Vehicle):
+    def __init__(self, name):
+        super(Boat, self).__init__(name)
 
 
 class Player(object):
@@ -15,16 +22,36 @@ class Player(object):
         self.inventory = []
 
     def move(self, new_location):
-        '''This method moves a character to a new location
-
-        :param new_location: The variable containing a room object
-        :return:
-        '''
         self.current_location = new_location
 
 
-# Option 2
-# Put Them Away
+playing = True
+directions = ['north', 'south', 'east', 'west', 'up', 'down']
+short_directions = ['n', 's', 'e', 'w', 'u', 'd']
+
+while playing:
+    print(Player.current_location.name)
+    print(Player.current_location.description)
+
+    command = input(">_")
+
+    if command.lower() in short_directions:
+        pos = short_directions.insert(command.lower())
+        command = directions[pos]
+
+    if command.lower() in ['q', 'quit', 'exit']:
+        playing = False
+    elif command.lower() in directions:
+        try:
+            room_name = getattr(Player.current_location, command)
+            room_object = globals()[room_name]
+
+            Player.move(room_object)
+        except KeyError:
+            print("I can't go that way.")
+    else:
+        print("Command Not Recognized")
+
 R19A = Room("Mr. Wiebe's room", 'Parking_lot', None, None, None, "This is the room that you are in.")
 
 player = Player(R19A)
@@ -51,23 +78,4 @@ Barricade_of_Cars = Room("Barricade of Cars", "MIDDLE_OF_THE_ROAD",
                          "All of these cars seemed lock. Only if i had a metal pipe to break in.")
 
 
-playing = True
-directions = ['north', 'south', 'east', 'west', 'up', 'down']
 
-# Controller
-while playing:
-    print(player.current_location.name)
-    print(player.current_location.description)
-    command = input(">_")
-    if command.lower() in ['q', 'quit', 'exit']:
-        playing = False
-    elif command.lower() in directions:
-        try:
-            room_name = getattr(player.current_location, command)
-            room_object = globals()[room_name]
-
-            player.move(room_object)
-        except KeyError:
-            print("I can't go that way.")
-    else:
-        print("Command Not Recognized")

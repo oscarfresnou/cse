@@ -1,3 +1,13 @@
+class Room(object):
+    def __init__(self, name, north=None, south=None, east=None, west=None, description=''):
+        self.name = name
+        self.north = north
+        self.south = south
+        self.east = east
+        self.west = west
+        self.description = description
+
+
 class Item(object):
     def __init__(self, name):
         self.name = name
@@ -10,6 +20,81 @@ class Vehicle(Item):
         self.steering_wheel = True
 
 
-class Boat(Vehicle):
+class Motorcycle (Vehicle):
     def __init__(self, name):
-        super(Boat, self).__init__(name)
+        super(Motorcycle, self).__init__(name)
+        self.engine = True
+        self.handle = True
+        self.pedal = True
+
+
+class Player(object):
+    def __init__(self, starting_location):
+        self.health = 100
+        self.current_location = starting_location
+        self.inventory = []
+
+    def move(self, new_location):
+        self.current_location = new_location
+
+
+playing = True
+directions = ['north', 'south', 'east', 'west', 'up', 'down']
+short_directions = ['n', 's', 'e', 'w', 'u', 'd']
+
+
+R19A = Room("Mr. Wiebe's room", 'Parking_lot', None, None, None, "This is the room that you are in.")
+
+player = Player(R19A)
+
+Parking_lot = Room("A Parking Lot", 'R19A', 'PARKING_LOT_GATE', None, None, "There are a few cars parked here.")
+
+Parking_lot_gate = Room("The Front Gate", 'PARKING_LOT', 'MIDDLE_OF_THE_ROAD', None, None,
+                        "The Gates are rusting, but the doors aren't locked")
+
+Middle_of_the_road = Room("Road", 'Parking lot Gate', 'Abandoned house', 'Abandoned Store', 'Barricade of cars',
+                          "There are puddles of green water and abandoned cars")
+
+Abandoned_House = Room("Old House", 'Middle_of_the_Road', 'TORN_UP_ROOM', None,
+                       "The house looks like it hasn't been kept in for years",
+                       "There are a few burn marks but a lot of trash.")
+
+Torn_up_room = Room("Torn up room", 'ABANDONED_HOUSE', 'DESTROYED_KITCHEN', 'OLD_BATHROOM',
+                    "The room is burned, torn up, and abandoned.")
+
+Destroyed_Kitchen = Room(None, None, None, "Torn up room", "The kitchen is the same as the house burned up",
+                         "with a lot of trash around")
+
+Old_Bathroom = Room(None, None, 'Torn_up_room', None,)
+
+Abandoned_Store = Room("Abandoned store", 'MIDDLE_OF_THE_ROAD', 'DAIRY_AISLE', 'CANNED_FOOD', 'FRUITS_AND_VEGETABLES',
+                       "It is old and broken down. Few parts of the store are breaking and look unstable.")
+
+Barricade_of_Cars = Room("Barricade of Cars", "MIDDLE_OF_THE_ROAD",
+                         "All of these cars seemed lock. Only if i had a metal pipe to break in.")
+
+
+while playing:
+    print(player.current_location.name)
+    print(player.current_location.description)
+
+    command = input(">_")
+
+    if command.lower() in short_directions:
+        pos = short_directions.index(command.lower())
+        command = directions[pos]
+
+    if command.lower() in ['q', 'quit', 'exit']:
+        playing = False
+    elif command.lower() in directions:
+        try:
+            room_name = getattr(player.current_location, command)
+            room_object = globals()[room_name]
+
+            player.move(room_object)
+        except KeyError:
+            print("I can't go that way.")
+    else:
+        print("Command Not Recognized")
+
+
