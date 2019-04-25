@@ -70,6 +70,12 @@ Old_Bathroom = Room(None, None, 'Torn_up_room', None,)
 Abandoned_Store = Room("Abandoned store", 'MIDDLE_OF_THE_ROAD', 'DAIRY_AISLE', 'CANNED_FOOD', 'FRUITS_AND_VEGETABLES',
                        "It is old and broken down. Few parts of the store are breaking and look unstable.")
 
+Dairy_Aisle = Room(None, None, None, "Abandoned_Store",
+                   "The Milks gone Bad, and it reeks.",
+                   "There's also a lot of stuff on the floor and some green thick liquid.")
+
+Canned_Food = Room(None, None, "Abandoned_Store", "Security_Room", "Everything here looks slightly ok except the meat.")
+
 Barricade_of_Cars = Room("Barricade of Cars", "MIDDLE_OF_THE_ROAD",
                          "All of these cars seemed lock. Only if i had a metal pipe to break in.")
 
@@ -97,4 +103,48 @@ while playing:
     else:
         print("Command Not Recognized")
 
+if command.lower() in ['q', 'quit', 'exit']:
+    playing = False
+elif command.lower() in directions:
+    try:
+        room_name = getattr(player.current_location, command)
+        if room_name is None:
+            raise AttributeError
+        player.move(room_name)
+    except AttributeError:
+        print("This path does not exist")
+    except KeyError:
+        print("I can't go that way.")
+elif command.lower() in ["search"]:
+    if len(player.current_location.items) > 0:
+        print()
+        print("The following items are in the room: ")
+        for num, item in enumerate(player.current_location.items):
+            print(str(num + 1) + ": " + item.name)
+    else:
+        print("There are no items in the room.")
+elif command.lower() in ["inventory", "I"]:
+    Item = 0
+    for i in player.inventory:
+        print(player.inventory[Item].name)
+        Item += 1
+elif "take" in command:
+    choice = input("what will you pick up: ")
 
+    number = int(choice)
+    if len(player.current_location.items) >= number > 0:
+        player.inventory.append(player.current_location.items[number - 1])
+        player.current_location.items.pop(number - 1)
+
+    print("The item is in your inventory")
+    print()
+elif "drop" in command:
+    choice = input("What will you drop:")
+
+    number = int(choice)
+    if len(player.current_location.items) > 0:
+        player.current_location.items.append((player.inventory[number - 1]))
+        player.inventory.pop(number - 1)
+else:
+    print("Command Not Recognized")
+print()
