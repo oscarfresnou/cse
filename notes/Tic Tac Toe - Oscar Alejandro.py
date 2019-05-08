@@ -5,30 +5,28 @@ def print_board(board):
         print(" ",)
         for j in range(3):
             if board[i * 3 + j] == 1:
-                print 'X',
+                print('X'),
             elif board[i * 3 + j] == 0:
-                print 'O',
+                print('O'),
             elif board[i * 3 + j] != -1:
-                print board[i * 3 + j] - 1,
+                print(board[i * 3 + j] - 1),
             else:
-                print ' ',
+                print(' '),
 
             if j != 2:
-                print " | ",
-        print
+                print(" | "),
 
         if i != 2:
-            print
-            "-----------------"
+            print("-----------------")
         else:
-            print
+            print()
 
 
 def print_instruction():
-    print
-    "Please use the following cell numbers to make your move"
+    print("Please use the following cell numbers to make your move")
     print_board([2, 3, 4, 5, 6, 7, 8, 9, 10])
 
+user =
 
 def get_input(turn):
     valid = False
@@ -36,13 +34,13 @@ def get_input(turn):
         try:
             user = raw_input("Where would you like to place " + turn + " (1-9)? ")
             user = int(user)
-            if user >= 1 and user <= 9:
+            if user >= 1 <= 9:
                 return user - 1
             else:
                 print("That is not a valid move! Please try again.\n")
                 print_instruction()
         except Exception as e:
-            print(user + " is not a valid move! Please try again.\n")
+            print(user + int," is not a valid move! Please try again.\n")
 
 
 def check_win(board):

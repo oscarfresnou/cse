@@ -20,6 +20,12 @@ def reverse(num: str):
     print(num[::-1])
 
 
+def valid1(num: str):
+    reversed_version = reverse(num)
+    for i in reversed_version:
+        ...
+
+
 reverse("4569787148249330")
 
 
