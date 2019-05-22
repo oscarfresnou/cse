@@ -23,12 +23,12 @@ def check_second_digits(num):
     sum = [0]
     for i in range(length-2,-1,-2):
         number = eval(num[i])
-        number = number * (2)
-      if number > 9:
-        str_Number = str(number)
-        number = eval(str_Number[0]) + eval(str_Number[1])
-        sum += number
-    return sum
+#        number = number *
+#      if number > 9:
+#        str_Number = str(number)
+#        number = eval(str_Number[0]) + eval(str_Number[1])
+#        sum += number
+#        return sum
 
 
 def odd_digits(num):
