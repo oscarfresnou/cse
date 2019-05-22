@@ -8,22 +8,53 @@ class Room(object):
         self.description = description
 
 
+Red = '\033[31m'  # Red Text
+Green = '\033[32m'  # Green Text
+Yellow = '\033[33m'  # Yellow Text
+Blue = '\033[34m'  # Blue Text
+Purple = '\033[35m'  # Purple Text
+Cyan = '\033[36m'  # Cyan Text
+
+
+class Character(object):
+    def __init__(self, name, health, weapon, armor):
+        self.name = name
+        self.health = health
+        self.weapon = weapon
+        self.armor = armor
+
+    def take_damage(self, damage):
+        self.health -= damage
+        if self.health < 0:
+            self.health = 0
+        print("%s has %d health left." % (self.name, self.health))
+
+    def attack(self, target):
+        print("%s attacks %s for %d damage" % (self.name, target.name, self.weapon.damage))
+        target.take_damage(self.weapon.damage)
+
+
+def fight(enemy):
+    print("A wild %s appears!" % enemy.name)
+    while player.health > 0 and enemy.health > 0:
+        input("Press any key to attack")
+        player.attack(enemy)
+        if enemy.health > 0:
+            enemy.attack(player)
+        if player.health <= 0:
+            print("GAME OVER")
+            quit(0)
+
+
 class Item(object):
     def __init__(self, name):
         self.name = name
 
 
-class Vehicle(Item):
-    def __init__(self, name):
-        super(Vehicle, self).__init__(name)
-        self.engine = True
-        self.steering_wheel = True
-
-
-class Ranged_Weapons(Item):
-    def __init__(self, name):
-        super(Ranged_Weapons, self).__init__(name)
-        self.Damage = 25
+class LongRangedWeapons(Item):
+    def __init__(self, name, damage):
+        super(LongRangedWeapons, self).__init__(name)
+        self.damage = damage
 
 
 class Medic(Item):
@@ -37,39 +68,61 @@ class Armor(Item):
         super(Armor, self).__init__(name)
 
 
-class Motorcycle (Vehicle):
-    def __init__(self, name):
-        super(Motorcycle, self).__init__(name)
-        self.engine = True
-        self.handle = True
-        self.pedal = True
+class Weapon(Item):
+    def __init__(self, name, damage):
+        super(Weapon, self).__init__(name)
+        self.damage = damage
 
 
-class AirsoftGun(Ranged_Weapons):
-    def __init__(self, name):
-        super(AirsoftGun, self).__init__(name)
+class SpecialWeapon(Item):
+    def __init__(self, name, damage):
+        super(SpecialWeapon, self).__init__(name)
+        self.damage = damage
+
+
+class AirsoftGun(LongRangedWeapons):
+    def __init__(self, damage):
+        super(AirsoftGun, self).__init__("Airsoft Gun", 2)
         self.trigger = True
         self.barrel = True
         self.ammo = True
-        self.Damage = True
+        self.Damage = damage
 
 
-class Bow(Ranged_Weapons):
-    def __init__(self, name):
-        super(Bow, self).__init__(name)
+class Bow(LongRangedWeapons):
+    def __init__(self, damage):
+        super(Bow, self).__init__("Bow", 10)
         self.String = True
         self.Arrows = True
-        self.Damage = True
+        self.damage = damage
 
 
-class CrossBow(Ranged_Weapons):
-    def __init__(self, name):
-        super(CrossBow, self).__init__(name)
-        self.Damage = True
+class CrossBow(LongRangedWeapons):
+    def __init__(self, damage):
+        super(CrossBow, self).__init__("Cross Bow", 19)
+        self.damage = damage
         self.string = True
         self.Arrows = True
         self.trigger = True
         self.sight = True
+
+
+class HolyDiamondFryingPan(SpecialWeapon):
+    def __init__(self, damage):
+        super(HolyDiamondFryingPan, self).__init__("Holy Diamond Frying Pan", 1000)
+        self.damage = damage
+
+
+class TwinkieSword(SpecialWeapon):
+    def __init__(self, damage):
+        super(TwinkieSword, self).__init__("Twinkie Sword", 100)
+        self.damage = damage
+
+
+class HerbLotion(Medic):
+    def __init__(self, heal):
+        super(HerbLotion, self).__init__(heal)
+        self.heal = heal
 
 
 class Player(object):
@@ -197,4 +250,3 @@ while playing:
             player.inventory.pop(number - 1)
     else:
         print("Command Not Recognized")
-    print()
